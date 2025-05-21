@@ -251,12 +251,12 @@ public class MainActivity extends AppCompatActivity {
 
     public static BigDecimal updatePriceRounded(BigDecimal currentPrice) {
         BigDecimal increasedPrice = currentPrice.multiply(new BigDecimal("1.15"));
-        return increasedPrice.setScale(0, RoundingMode.UP); // Round UP to nearest whole number
+        return increasedPrice.setScale(0, RoundingMode.UP); 
     }
 
     public static BigDecimal returnSellGainRounded(BigDecimal currentPrice) {
         BigDecimal refund = currentPrice.multiply(new BigDecimal("0.25"));
-        return refund.setScale(0, RoundingMode.DOWN); // Round DOWN to nearest whole number
+        return refund.setScale(0, RoundingMode.DOWN); 
     }
 
     public void updateCookieCounter() {
@@ -279,11 +279,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Set up bottom nav and attach the listener
+        
         BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        // Load the default fragment on startup
+        
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(
                     R.id.frameLayout, new CookieFragment()).commit();
